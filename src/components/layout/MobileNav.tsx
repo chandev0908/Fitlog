@@ -2,9 +2,11 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, CalendarDays, Trophy, User } from 'lucide-react'
+import { LayoutDashboard, CalendarDays, Trophy, User, LogOut } from 'lucide-react'
 import { cn } from '@/lib/utils/cn'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { signOut } from '@/lib/actions/auth.actions'
+import { SearchUsers } from '@/components/layout/SearchUsers'
 
 interface MobileNavProps {
   profile: { username: string; full_name: string | null } | null
@@ -27,9 +29,18 @@ export function MobileNav({ profile }: MobileNavProps) {
         <span className="font-display font-bold text-base tracking-tight">
           FIT<span className="text-brand">LOG</span>
         </span>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <span className="text-xs text-muted">@{profile?.username}</span>
+          <SearchUsers />
           <ThemeToggle />
+          <form action={signOut}>
+            <button
+              type="submit"
+              className="flex items-center gap-1 text-xs font-display font-medium text-muted hover:text-red-500 transition-colors"
+            >
+              <LogOut size={14} />
+            </button>
+          </form>
         </div>
       </header>
 

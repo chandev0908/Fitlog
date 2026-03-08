@@ -9,10 +9,12 @@ import {
   User,
   Settings,
   LogOut,
+  Search,
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { signOut } from "@/lib/actions/auth.actions";
+import { SearchUsers } from "./SearchUsers";
 
 interface SidebarProps {
   profile: {
@@ -44,6 +46,7 @@ export function Sidebar({ profile }: SidebarProps) {
 
       {/* Nav */}
       <nav className="flex-1 px-2 py-4 flex flex-col gap-0.5">
+        <SearchUsers />
         {navItems.map(({ href, label, icon: Icon }) => {
           const active = pathname === href || pathname.startsWith(href + "/");
           return (
