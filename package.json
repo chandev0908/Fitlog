@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@supabase/ssr": "^0.9.0",
     "@supabase/supabase-js": "^2.98.0",
+    "@tailwindcss/postcss": "^4.2.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.576.0",
@@ -23,17 +24,16 @@
     "react-dropzone": "^15.0.0",
     "react-hook-form": "^7.71.2",
     "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20.19.35",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "supabase": "^2.76.16",
-    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }
