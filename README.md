@@ -1,3 +1,21 @@
+FitLog is a full-stack fitness tracking web app built with Next.js, Supabase, and Tailwind CSS.
+
+The goal of this project is to solve common problems many lifters experience: forgetting personal records, losing track of workout consistency, and not having a simple way to document progress.
+
+With FitLog, users can:
+
+* Log daily workout or rest days
+* Track personal records (PRs) for specific exercises
+* Upload progress photos
+* Write daily notes or reflections
+* View other user profiles and their fitness journey
+
+The idea started as a **personal tool** to track my own workouts and progress, but it is designed so other people can also use it to stay consistent, monitor improvements, and document their fitness journey in one place.
+
+This project is also part of my journey to becoming a full-stack developer, focusing on building a production-style application with authentication, database security (RLS), image storage, and scalable architecture.
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
