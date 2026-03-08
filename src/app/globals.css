@@ -1,34 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-family-display: var(--font-display);
+  --font-family-body: var(--font-body);
+
+  --color-brand-50: #f0fdf4;
+  --color-brand-500: #22c55e;
+  --color-brand-600: #16a34a;
+  --color-brand-900: #14532d;
+}
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 8%;
-    --surface: 0 0% 94%;
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --surface: 210 40% 96%;
     --surface-raised: 0 0% 100%;
-    --border: 0 0% 88%;
-    --muted: 0 0% 46%;
-    --brand: 142 72% 29%;
-    --brand-light: 142 76% 36%;
+    --border: 214 32% 91%;
+    --muted: 215 16% 47%;
+    --brand: 142 71% 45%;
+    --brand-light: 142 69% 58%;
     --brand-glow: 142 69% 58%;
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
-    --surface: 0 0% 9%;
-    --surface-raised: 0 0% 12%;
-    --border: 0 0% 18%;
-    --muted: 0 0% 50%;
-    --brand: 142 76% 36%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --surface: 217 33% 17%;
+    --surface-raised: 217 33% 20%;
+    --border: 217 19% 27%;
+    --muted: 215 20% 65%;
+    --brand: 142 71% 45%;
     --brand-light: 142 69% 58%;
     --brand-glow: 142 69% 58%;
   }
 
   * {
-    @apply border-[hsl(var(--border))];
+    border-color: hsl(var(--border));
   }
 
   body {
@@ -36,23 +45,21 @@
     color: hsl(var(--foreground));
   }
 
-  /* Smooth scrollbar in dark mode */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: hsl(var(--background)); }
   ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 3px; }
 }
 
 @layer utilities {
-  .bg-background  { background-color: hsl(var(--background)); }
-  .bg-surface     { background-color: hsl(var(--surface)); }
+  .bg-background     { background-color: hsl(var(--background)); }
+  .bg-surface        { background-color: hsl(var(--surface)); }
   .bg-surface-raised { background-color: hsl(var(--surface-raised)); }
-  .text-muted     { color: hsl(var(--muted)); }
-  .border-base    { border-color: hsl(var(--border)); }
-  .text-brand     { color: hsl(var(--brand-glow)); }
-  .bg-brand       { background-color: hsl(var(--brand)); }
-  .bg-brand-hover { background-color: hsl(var(--brand-light)); }
+  .text-muted        { color: hsl(var(--muted)); }
+  .border-base       { border-color: hsl(var(--border)); }
+  .text-brand        { color: hsl(var(--brand-glow)); }
+  .bg-brand          { background-color: hsl(var(--brand)); }
+  .bg-brand-hover    { background-color: hsl(var(--brand-light)); }
 
-  /* Noise texture overlay for depth */
   .noise::after {
     content: '';
     position: absolute;
